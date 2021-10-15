@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1027112399447-60ufv7oi6s8u5onr60fjrj4eitu166gv.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1027112399447</string>
+    <string name="google_api_key" translatable="false">AIzaSyAL6uTeBcyLShHuAI1Xi9ifUZgw5cqlXzk</string>
+    <string name="google_app_id" translatable="false">1:1027112399447:android:40f68bfa2124e3dc132912</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAL6uTeBcyLShHuAI1Xi9ifUZgw5cqlXzk</string>
+    <string name="google_storage_bucket" translatable="false">mighty-news-8e661.appspot.com</string>
+    <string name="project_id" translatable="false">mighty-news-8e661</string>
+</resources>
