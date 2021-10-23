@@ -114,7 +114,7 @@ class Dashboard1WidgetState extends State<Dashboard1Widget> with SingleTickerPro
               ],
             ).visible(widget.snap.data.recent_post.validate().isNotEmpty),
 
-            TwitterFeedListWidget(),
+            // TwitterFeedListWidget(),
           ],
         ),
       ),

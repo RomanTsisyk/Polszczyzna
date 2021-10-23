@@ -65,46 +65,46 @@ class ProfileFragmentState extends State<ProfileFragment> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(16),
-                      color: appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
-                      child: appStore.isLoggedIn
-                          ? Row(
-                              children: [
-                                appStore.userProfileImage.validate().isEmpty
-                                    ? Icon(Icons.person_outline, size: 40)
-                                    : cachedImage(appStore.userProfileImage.validate(), usePlaceholderIfUrlEmpty: true, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(60),
-                                16.width,
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('${appStore.userFirstName.validate()} ${appStore.userLastName.validate()}', style: boldTextStyle()),
-                                    Text(appStore.userEmail.validate(), style: primaryTextStyle()).fit(),
-                                  ],
-                                ).expand(),
-                                IconButton(
-                                  icon: Icon(Icons.edit),
-                                  onPressed: () => EditProfileScreen().launch(context),
-                                ),
-                              ],
-                            )
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 12),
-                                  decoration: BoxDecoration(border: Border.all(color: Theme.of(context).dividerColor)),
-                                  child: Text(appLocalization.translate('login'), style: boldTextStyle()),
-                                ).onTap(() async {
-                                  await LoginScreen(isNewTask: false).launch(context);
-                                  setState(() {});
-                                }),
-                                if (enableSocialLogin) SocialLoginWidget(voidCallback: () => setState(() {})),
-                              ],
-                            ),
-                    ),
-                    Divider(height: 20, color: appStore.isDarkMode ? Colors.transparent : Theme.of(context).dividerColor),
-                    8.height,
+                    // Container(
+                    //   padding: EdgeInsets.all(16),
+                    //   color: appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
+                    //   child: appStore.isLoggedIn
+                    //       ? Row(
+                    //           children: [
+                    //             appStore.userProfileImage.validate().isEmpty
+                    //                 ? Icon(Icons.person_outline, size: 40)
+                    //                 : cachedImage(appStore.userProfileImage.validate(), usePlaceholderIfUrlEmpty: true, height: 60, width: 60, fit: BoxFit.cover).cornerRadiusWithClipRRect(60),
+                    //             16.width,
+                    //             Column(
+                    //               crossAxisAlignment: CrossAxisAlignment.start,
+                    //               children: [
+                    //                 Text('${appStore.userFirstName.validate()} ${appStore.userLastName.validate()}', style: boldTextStyle()),
+                    //                 Text(appStore.userEmail.validate(), style: primaryTextStyle()).fit(),
+                    //               ],
+                    //             ).expand(),
+                    //             IconButton(
+                    //               icon: Icon(Icons.edit),
+                    //               onPressed: () => EditProfileScreen().launch(context),
+                    //             ),
+                    //           ],
+                    //         )
+                    //       : Row(
+                    //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //           children: [
+                    //             Container(
+                    //               padding: EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 12),
+                    //               decoration: BoxDecoration(border: Border.all(color: Theme.of(context).dividerColor)),
+                    //               child: Text(appLocalization.translate('login'), style: boldTextStyle()),
+                    //             ).onTap(() async {
+                    //               await LoginScreen(isNewTask: false).launch(context);
+                    //               setState(() {});
+                    //             }),
+                    //             if (enableSocialLogin) SocialLoginWidget(voidCallback: () => setState(() {})),
+                    //           ],
+                    //         ),
+                    // ),
+                    // Divider(height: 20, color: appStore.isDarkMode ? Colors.transparent : Theme.of(context).dividerColor),
+                    // 8.height,
                     titleWidget(appLocalization.translate('app_settings')),
                     LanguageSelectionWidget(),
                     SettingItemWidget(
@@ -202,18 +202,18 @@ class ProfileFragmentState extends State<ProfileFragment> {
                       },
                     ).visible(appStore.isLoggedIn && !isLoggedInWithGoogleOrApple() && getStringAsync(LOGIN_TYPE) != LoginTypeOTP),
                     8.height.visible(appStore.isLoggedIn && !isLoggedInWithGoogleOrApple() && getStringAsync(LOGIN_TYPE) != LoginTypeOTP),
-                    SettingItemWidget(
-                      leading: Icon(Icons.my_library_add_outlined),
-                      title: appLocalization.translate('my_Topics'),
-                      onTap: () {
-                        if (appStore.isLoggedIn) {
-                          ChooseTopicScreen().launch(context);
-                        } else {
-                          LoginScreen().launch(context);
-                        }
-                      },
-                    ),
-                    8.height,
+                    // SettingItemWidget(
+                    //   leading: Icon(Icons.my_library_add_outlined),
+                    //   title: appLocalization.translate('my_Topics'),
+                    //   onTap: () {
+                    //     if (appStore.isLoggedIn) {
+                    //       ChooseTopicScreen().launch(context);
+                    //     } else {
+                    //       LoginScreen().launch(context);
+                    //     }
+                    //   },
+                    // ),
+                    // 8.height,
                     SettingItemWidget(
                       leading: Icon(Icons.check_circle_outline_outlined),
                       title: appLocalization.translate('choose_detail_page_variant'),
@@ -229,18 +229,18 @@ class ProfileFragmentState extends State<ProfileFragment> {
                         ChooseDashboardPageVariant().launch(context);
                       },
                     ),
-                    8.height,
-                    SettingItemWidget(
-                      leading: Icon(FontAwesome.bookmark_o),
-                      title: appLocalization.translate('bookmarks'),
-                      onTap: () {
-                        if (appStore.isLoggedIn) {
-                          BookmarkNewsScreen().launch(context);
-                        } else {
-                          LoginScreen().launch(context);
-                        }
-                      },
-                    ),
+                    // 8.height,
+                    // SettingItemWidget(
+                    //   leading: Icon(FontAwesome.bookmark_o),
+                    //   title: appLocalization.translate('bookmarks'),
+                    //   onTap: () {
+                    //     if (appStore.isLoggedIn) {
+                    //       BookmarkNewsScreen().launch(context);
+                    //     } else {
+                    //       LoginScreen().launch(context);
+                    //     }
+                    //   },
+                    // ),
                     8.height,
                     SettingItemWidget(
                       leading: Icon(Icons.share_outlined),

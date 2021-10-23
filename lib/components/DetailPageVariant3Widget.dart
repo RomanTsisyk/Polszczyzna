@@ -122,33 +122,33 @@ class DetailPageVariant3WidgetState extends State<DetailPageVariant3Widget> {
                         ).expand(),
                         Row(
                           children: [
-                            IconButton(
-                              icon: Container(
-                                child: Icon(widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o),
-                                decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle),
-                                padding: EdgeInsets.all(4),
-                              ),
-                              onPressed: () async {
-                                if (!appStore.isLoggedIn) {
-                                  bool res = await LoginScreen(isNewTask: false).launch(context);
-                                  if (res ?? false) {
-                                    addToWishList();
-                                  }
-                                } else {
-                                  addToWishList();
-                                }
-                              },
-                            ),
-                            IconButton(
-                              icon: Container(
-                                child: Icon(Icons.share_rounded),
-                                decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle),
-                                padding: EdgeInsets.all(4),
-                              ),
-                              onPressed: () async {
-                                Share.share(widget.newsData.share_url.validate());
-                              },
-                            ),
+                            // IconButton(
+                            //   icon: Container(
+                            //     child: Icon(widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o),
+                            //     decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle),
+                            //     padding: EdgeInsets.all(4),
+                            //   ),
+                            //   onPressed: () async {
+                            //     if (!appStore.isLoggedIn) {
+                            //       bool res = await LoginScreen(isNewTask: false).launch(context);
+                            //       if (res ?? false) {
+                            //         addToWishList();
+                            //       }
+                            //     } else {
+                            //       addToWishList();
+                            //     }
+                            //   },
+                            // ),
+                            // IconButton(
+                            //   icon: Container(
+                            //     child: Icon(Icons.share_rounded),
+                            //     decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle),
+                            //     padding: EdgeInsets.all(4),
+                            //   ),
+                            //   onPressed: () async {
+                            //     Share.share(widget.newsData.share_url.validate());
+                            //   },
+                            // ),
                             IconButton(
                               icon: Container(
                                 child: Icon(Icons.play_circle_outline),
@@ -200,18 +200,18 @@ class DetailPageVariant3WidgetState extends State<DetailPageVariant3Widget> {
                     ),
                     HtmlWidget(postContent: widget.postContent, color: Colors.white),
                     30.height,
-                    AppButton(
-                      text: appLocalization.translate('view_Comments'),
-                      color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
-                      textStyle: boldTextStyle(color: white),
-                      onTap: () async {
-                        await CommentListScreen(widget.newsData.iD).launch(context);
-                        await Future.delayed(Duration(milliseconds: 300));
-
-                        setDynamicStatusBarColorDetail(milliseconds: 400);
-                      },
-                      width: context.width(),
-                    ).paddingSymmetric(horizontal: 16),
+                    // AppButton(
+                    //   text: appLocalization.translate('view_Comments'),
+                    //   color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
+                    //   textStyle: boldTextStyle(color: white),
+                    //   onTap: () async {
+                    //     await CommentListScreen(widget.newsData.iD).launch(context);
+                    //     await Future.delayed(Duration(milliseconds: 300));
+                    //
+                    //     setDynamicStatusBarColorDetail(milliseconds: 400);
+                    //   },
+                    //   width: context.width(),
+                    // ).paddingSymmetric(horizontal: 16),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

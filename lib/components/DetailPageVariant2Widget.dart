@@ -169,18 +169,18 @@ class DetailPageVariant2WidgetState extends State<DetailPageVariant2Widget> {
                   child: HtmlWidget(postContent: widget.postContent),
                   margin: EdgeInsets.only(bottom: 30),
                 ),
-                AppButton(
-                  text: appLocalization.translate('view_Comments'),
-                  color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
-                  textStyle: boldTextStyle(color: white),
-                  onTap: () async {
-                    await CommentListScreen(widget.newsData.iD).launch(context);
-                    await Future.delayed(Duration(milliseconds: 300));
-
-                    setStatusBarColor(Colors.transparent);
-                  },
-                  width: context.width(),
-                ).paddingSymmetric(horizontal: 16),
+                // AppButton(
+                //   text: appLocalization.translate('view_Comments'),
+                //   color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
+                //   textStyle: boldTextStyle(color: white),
+                //   onTap: () async {
+                //     await CommentListScreen(widget.newsData.iD).launch(context);
+                //     await Future.delayed(Duration(milliseconds: 300));
+                //
+                //     setStatusBarColor(Colors.transparent);
+                //   },
+                //   width: context.width(),
+                // ).paddingSymmetric(horizontal: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -206,33 +206,33 @@ class DetailPageVariant2WidgetState extends State<DetailPageVariant2Widget> {
                 Container(child: BackButton(), decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle, boxShadow: defaultBoxShadow())),
                 Row(
                   children: [
-                    IconButton(
-                      icon: Container(
-                        child: Icon(widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o),
-                        decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle, boxShadow: defaultBoxShadow()),
-                        padding: EdgeInsets.all(4),
-                      ),
-                      onPressed: () async {
-                        if (!appStore.isLoggedIn) {
-                          bool res = await LoginScreen(isNewTask: false).launch(context);
-                          if (res ?? false) {
-                            addToWishList();
-                          }
-                        } else {
-                          addToWishList();
-                        }
-                      },
-                    ),
-                    IconButton(
-                      icon: Container(
-                        child: Icon(Icons.share_rounded),
-                        decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle, boxShadow: defaultBoxShadow()),
-                        padding: EdgeInsets.all(4),
-                      ),
-                      onPressed: () async {
-                        Share.share(widget.newsData.share_url.validate());
-                      },
-                    ),
+                    // IconButton(
+                    //   icon: Container(
+                    //     child: Icon(widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o),
+                    //     decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle, boxShadow: defaultBoxShadow()),
+                    //     padding: EdgeInsets.all(4),
+                    //   ),
+                    //   onPressed: () async {
+                    //     if (!appStore.isLoggedIn) {
+                    //       bool res = await LoginScreen(isNewTask: false).launch(context);
+                    //       if (res ?? false) {
+                    //         addToWishList();
+                    //       }
+                    //     } else {
+                    //       addToWishList();
+                    //     }
+                    //   },
+                    // ),
+                    // IconButton(
+                    //   icon: Container(
+                    //     child: Icon(Icons.share_rounded),
+                    //     decoration: BoxDecoration(color: context.scaffoldBackgroundColor, shape: BoxShape.circle, boxShadow: defaultBoxShadow()),
+                    //     padding: EdgeInsets.all(4),
+                    //   ),
+                    //   onPressed: () async {
+                    //     Share.share(widget.newsData.share_url.validate());
+                    //   },
+                    // ),
                     IconButton(
                       icon: Container(
                         child: Icon(Icons.play_circle_outline),

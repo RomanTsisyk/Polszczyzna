@@ -35,8 +35,8 @@ class CategoryItemWidgetState extends State<CategoryItemWidget> {
 
   @override
   Widget build(BuildContext context) {
-    double h = 100;
-    double w = context.width() * 0.3;
+    double h = context.height() * 0.25;
+    double w = context.width() * 0.45;
 
     return Container(
       padding: EdgeInsets.all(8),

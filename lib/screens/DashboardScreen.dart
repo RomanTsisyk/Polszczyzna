@@ -45,8 +45,7 @@ class DashboardScreenState extends State<DashboardScreen> with AfterLayoutMixin<
   init() async {
     setDynamicStatusBarColor();
 
-    widgets.add(HomeFragment());
-    widgets.add(SuggestedForYouFragment());
+    // widgets.add(HomeFragment());
     widgets.add(CategoryFragment());
     widgets.add(SearchNewsFragment());
     widgets.add(ProfileFragment());
@@ -123,69 +122,32 @@ class DashboardScreenState extends State<DashboardScreen> with AfterLayoutMixin<
         },
         child: Scaffold(
           body: Container(child: widgets[currentIndex]),
-          bottomNavigationBar: Observer(
-            builder: (_) => BottomNavigationBar(
-              currentIndex: currentIndex,
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(AntDesign.home, color: context.theme.iconTheme.color),
-                  label: 'Home',
-                  activeIcon: Icon(AntDesign.home, color: colorPrimary),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.dashboard_outlined, color: context.theme.iconTheme.color),
-                  label: 'Suggested For You',
-                  activeIcon: Icon(Icons.dashboard_outlined, color: colorPrimary),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.category_outlined, color: context.theme.iconTheme.color),
-                  label: 'Category',
-                  activeIcon: Icon(Icons.category_outlined, color: colorPrimary),
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Ionicons.ios_search, color: context.theme.iconTheme.color),
-                  label: 'Search News',
-                  activeIcon: Icon(Ionicons.ios_search, color: colorPrimary),
-                ),
-                BottomNavigationBarItem(
-                  icon:
-                      appStore.isLoggedIn ? cachedImage(appStore.userProfileImage, height: 24, width: 24, fit: BoxFit.cover).cornerRadiusWithClipRRect(15) : Icon(MaterialIcons.person_outline, color: context.theme.iconTheme.color),
-                  label: 'Profile',
-                  activeIcon: appStore.isLoggedIn
-                      ? Container(
-                          decoration: BoxDecoration(border: Border.all(color: colorPrimary), shape: BoxShape.circle),
-                          child: cachedImage(
-                            appStore.userProfileImage,
-                            height: 24,
-                            width: 24,
-                            fit: BoxFit.cover,
-                          ).cornerRadiusWithClipRRect(15))
-                      : Icon(MaterialIcons.person_outline, color: colorPrimary),
-                ),
-              ],
-              type: BottomNavigationBarType.fixed,
-              showUnselectedLabels: false,
-              showSelectedLabels: false,
-              onTap: (i) async {
-                if (i == 1) {
-                  if (!appStore.isLoggedIn) {
-                    LoginScreen().launch(context);
-                  } else if (appStore.myTopics.isEmpty && i == 1) {
-                    await ChooseTopicScreen().launch(context);
-
-                    if (appStore.myTopics.isNotEmpty) {
-                      currentIndex = 1;
-                    }
-                  } else {
-                    currentIndex = i;
-                  }
-                } else {
-                  currentIndex = i;
-                }
-
-                setState(() {});
-              },
-            ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: currentIndex,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.language, color: Theme.of(context).iconTheme.color),
+                label: 'Category',
+                activeIcon: Icon(Icons.language, color: colorPrimary),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Ionicons.ios_search, color: Theme.of(context).iconTheme.color),
+                label: 'Search News',
+                activeIcon: Icon(Ionicons.ios_search, color: colorPrimary),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(MaterialIcons.settings, color: Theme.of(context).iconTheme.color),
+                label: 'Settings',
+                activeIcon: Icon(MaterialIcons.settings, color: colorPrimary),
+              ),
+            ],
+            type: BottomNavigationBarType.fixed,
+            showUnselectedLabels: false,
+            showSelectedLabels: false,
+            onTap: (i) async {
+              currentIndex = i;
+              setState(() {});
+            },
           ),
         ),
       ),

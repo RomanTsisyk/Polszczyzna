@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:mighty_news/components/AppWidgets.dart';
 import 'package:mighty_news/main.dart';
-import 'package:mighty_news/utils/Constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 enum TtsState { playing, stopped, paused, continued }
@@ -38,7 +37,7 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
 
   Future<void> init() async {
     bool isLanguageFound = false;
-
+    flutterTts.awaitSpeakCompletion(true);
     flutterTts.getLanguages.then((value) {
       Iterable it = value;
 
@@ -65,14 +64,6 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
       stop();
     });
 
-    flutterTts.setProgressHandler((String text, int startOffset, int endOffset, String word) {
-      currentWordPosition++;
-
-      if (progress < 100) {
-        progress = (currentWordPosition * 110) ~/ text.split(' ').length;
-        setState(() {});
-      }
-    });
 
     flutterTts.setErrorHandler((msg) async {
       await Future.delayed(Duration(milliseconds: 500));
@@ -110,12 +101,24 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
   Future speak() async {
     currentWordPosition = 0;
     progress = 0;
-
     animationController.forward();
 
-    var result = await flutterTts.speak(widget.text);
+    // var result = await flutterTts.speak(widget.text);
+    flutterTts.awaitSpeakCompletion(true);
+    var count = widget.text.length;
+    var max = 3000;
+    var loopCount = count ~/max;
 
-    if (result == 1) setState(() => ttsState = TtsState.playing);
+    for( var i = 0 ; i <= loopCount; i++ ) {
+      if (i != loopCount) {
+        await flutterTts.speak(widget.text.substring(i*max, (i+1)*max));
+      } else {
+        var end = (count - ((i*max))+(i*max));
+        await flutterTts.speak(widget.text.substring(i*max, end));
+      }
+    }
+
+    // if (result == 1) setState(() => ttsState = TtsState.playing);
   }
 
   Future stop() async {
@@ -149,17 +152,17 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
         alignment: Alignment.bottomCenter,
         children: [
           cachedImage(
-            mTTSImageUrl,
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png',
             fit: BoxFit.cover,
           ).cornerRadiusWithClipRRect(defaultRadius).opacity(opacity: 0.7),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  //Text('${ttsState == TtsState.playing ? 'Playing' : 'Stopped'}', style: boldTextStyle()),
-                  //30.width,
+
                   Container(
                     decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
                     child: IconButton(
@@ -169,26 +172,9 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
                       icon: AnimatedIcon(icon: AnimatedIcons.play_pause, progress: animationController, color: Colors.black),
                     ),
                   ),
-                  16.width,
-                  Stack(
-                    children: [
-                      Container(
-                        height: 10,
-                        decoration: BoxDecoration(color: Colors.white.withOpacity(0.3), borderRadius: radius(defaultRadius)),
-                        alignment: Alignment.centerLeft,
-                        width: 200,
-                      ),
-                      AnimatedContainer(
-                        duration: Duration(milliseconds: 800),
-                        height: 10,
-                        decoration: BoxDecoration(color: Colors.white, borderRadius: radius(defaultRadius)),
-                        alignment: Alignment.centerLeft,
-                        width: (progress * 2).toDouble(),
-                      ),
-                    ],
-                  ),
+                  30.width,
+                  Text('${ttsState == TtsState.playing ? 'Playing' : 'Stopped'}', style: boldTextStyle()),
                   //8.width,
-                  //Text('$progress%', style: boldTextStyle(size: 20)),
                 ],
               ),
               30.height,

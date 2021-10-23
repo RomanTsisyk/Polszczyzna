@@ -78,9 +78,9 @@ class HtmlWidget extends StatelessWidget {
             return YouTubeEmbedWidget(_.innerHtml.splitBetween('<div class="wp-block-embed__wrapper">', "</div>").replaceAll('<br>', '').convertYouTubeUrlToId());
           } else if (_.innerHtml.contains('vimeo')) {
             return VimeoEmbedWidget(_.innerHtml.splitBetween('<div class="wp-block-embed__wrapper">', "</div>").replaceAll('<br>', '').splitAfter('com/'));
-          } else if (_.innerHtml.contains('twitter')) {
-            String t = _.innerHtml.splitAfter('<div class="wp-block-embed__wrapper">').splitBefore('</div>');
-            return TweetWebView.tweetUrl(t);
+          // } else if (_.innerHtml.contains('twitter')) {
+          //   String t = _.innerHtml.splitAfter('<div class="wp-block-embed__wrapper">').splitBefore('</div>');
+          //   return TweetWebView.tweetUrl(t);
           } else if (_.innerHtml.contains('audio controls')) {
             return Theme(
               data: ThemeData(),

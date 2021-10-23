@@ -179,32 +179,32 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
                 textColor: getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) != 1 ? textPrimaryColorGlobal : Colors.white,
                 actions: [
                   if (widget.newsData != null)
-                    IconButton(
-                      icon: Icon(
-                        widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o,
-                        color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) == 1) || appStore.isDarkMode ? Colors.white : Colors.black,
-                      ),
-                      onPressed: () async {
-                        if (!appStore.isLoggedIn) {
-                          bool res = await LoginScreen(isNewTask: false).launch(context);
-
-                          if (res ?? false) {
-                            addToWishList();
-                          }
-                        } else {
-                          addToWishList();
-                        }
-                      },
-                    ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.share_rounded,
-                      color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) == 1) || appStore.isDarkMode ? Colors.white : Colors.black,
-                    ),
-                    onPressed: () async {
-                      Share.share(widget.newsData.share_url.validate());
-                    },
-                  ),
+                    // IconButton(
+                    //   icon: Icon(
+                    //     widget.newsData.is_fav.validate() ? FontAwesome.bookmark : FontAwesome.bookmark_o,
+                    //     color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) == 1) || appStore.isDarkMode ? Colors.white : Colors.black,
+                    //   ),
+                    //   onPressed: () async {
+                    //     if (!appStore.isLoggedIn) {
+                    //       bool res = await LoginScreen(isNewTask: false).launch(context);
+                    //
+                    //       if (res ?? false) {
+                    //         addToWishList();
+                    //       }
+                    //     } else {
+                    //       addToWishList();
+                    //     }
+                    //   },
+                    // ),
+                  // IconButton(
+                  //   icon: Icon(
+                  //     Icons.share_rounded,
+                  //     color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) == 1) || appStore.isDarkMode ? Colors.white : Colors.black,
+                  //   ),
+                  //   onPressed: () async {
+                  //     Share.share(widget.newsData.share_url.validate());
+                  //   },
+                  // ),
                   IconButton(
                     icon: Icon(
                       Icons.play_circle_outline,

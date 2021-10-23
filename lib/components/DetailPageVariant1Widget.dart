@@ -77,7 +77,7 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
                 ],
               ),
               cachedImage(
-                widget.newsData.full_image.validate(),
+                widget.newsData.image.validate(),
                 height: 300,
                 fit: BoxFit.cover,
                 width: context.width(),
@@ -105,17 +105,17 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
               ).paddingSymmetric(horizontal: 16, vertical: 8),
               HtmlWidget(postContent: widget.postContent).paddingOnly(left: 8, right: 8),
               30.height,
-              AppButton(
-                text: appLocalization.translate('view_Comments'),
-                color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
-                textStyle: boldTextStyle(color: white),
-                onTap: () async {
-                  await CommentListScreen(widget.newsData.iD).launch(context);
-
-                  setDynamicStatusBarColorDetail(milliseconds: 400);
-                },
-                width: context.width(),
-              ).paddingSymmetric(horizontal: 16),
+              // AppButton(
+              //   text: appLocalization.translate('view_Comments'),
+              //   color: appStore.isDarkMode ? scaffoldSecondaryDark : colorPrimary,
+              //   textStyle: boldTextStyle(color: white),
+              //   onTap: () async {
+              //     await CommentListScreen(widget.newsData.iD).launch(context);
+              //
+              //     setDynamicStatusBarColorDetail(milliseconds: 400);
+              //   },
+              //   width: context.width(),
+              // ).paddingSymmetric(horizontal: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

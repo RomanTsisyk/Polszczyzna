@@ -11,8 +11,8 @@ class Language {
 
   static List<Language> getLanguages() {
     return <Language>[
-      Language(0, 'English', 'en', 'assets/flags/ic_us.png', 'en-EN'),
-      Language(1, 'ગુજરાતી', 'gu', 'assets/flags/ic_india.png', 'gu-IN'),
+      Language(0, 'Polski', 'pl', 'assets/flags/ic_india.png', 'pl-Pl'),
+      Language(1, 'English', 'en', 'assets/flags/ic_us.png', 'en-EN'),
       Language(2, 'हिन्दी', 'hi', 'assets/flags/ic_india.png', 'hi-IN'),
       Language(3, 'عربي', 'ar', 'assets/flags/ic_ar.png', 'ar-AR'),
       Language(4, 'Deutsche', 'de', 'assets/flags/ic_germany.png', 'de-DE'),
@@ -23,6 +23,7 @@ class Language {
       Language(9, 'français', 'fr', 'assets/flags/ic_french.png', 'fr-FR'),
       Language(10, 'اردو', 'ur', 'assets/flags/ic_pakistan.png', 'ur-UR'),
       Language(11, 'తెలుగు', 'te', 'assets/flags/ic_india.png', 'te-TE'),
+      Language(12, 'ગુજરાતી', 'gu', 'assets/flags/ic_india.png', 'gu-IN'),
     ];
   }
 
