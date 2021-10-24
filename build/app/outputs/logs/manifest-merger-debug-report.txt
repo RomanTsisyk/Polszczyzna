@@ -4,7 +4,6 @@ ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
 INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
 INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
 INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
-MERGED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
 MERGED from [:firebase_crashlytics] C:\App\mighty_news\build\firebase_crashlytics\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] C:\App\mighty_news\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_remote_config] C:\App\mighty_news\build\firebase_remote_config\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
@@ -102,27 +101,25 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Roman\.gradle\
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\f18340e6d0a5b9277087f76065adeaab\sqlite-framework-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\371a4fcbfa04444d416553bccda9002f\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads-base:19.7.0] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\05efc9a3f0825e005c82146305c70bf8\jetified-play-services-ads-base-19.7.0\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
+INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
+INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
 	package
-		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:2:5-30
+		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:2:5-37
 		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
-		INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:1-51:12
-		INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:4:5-67
-MERGED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:4:5-67
 MERGED from [:google_mobile_ads] C:\App\mighty_news\build\google_mobile_ads\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
 MERGED from [:google_mobile_ads] C:\App\mighty_news\build\google_mobile_ads\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
 MERGED from [:google_sign_in] C:\App\mighty_news\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
@@ -291,7 +288,7 @@ MERGED from [com.google.android.gms:play-services-ads-base:19.7.0] C:\Users\Roma
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:13:9-43
 	android:usesCleartextTraffic
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:15:9-44
-activity#com.mighty.news.MainActivity
+activity#polszczyzna.tsisyk.app.MainActivity
 ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:16:9-40:20
 	android:launchMode
 		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml:20:13-43
@@ -537,16 +534,18 @@ MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Roman\.gradle\caches\transfo
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\371a4fcbfa04444d416553bccda9002f\sqlite-2.0.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:19.7.0] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\05efc9a3f0825e005c82146305c70bf8\jetified-play-services-ads-base-19.7.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:19.7.0] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\05efc9a3f0825e005c82146305c70bf8\jetified-play-services-ads-base-19.7.0\AndroidManifest.xml:5:5-44
-INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.android.gms:play-services-ads:19.7.0] C:\Users\Roman\.gradle\caches\transforms-2\files-2.1\8f94ae9f2755884277d628915d334888\jetified-play-services-ads-19.7.0\AndroidManifest.xml:23:9-49
 	android:targetSdkVersion
 		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\App\mighty_news\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\App\mighty_news\android\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_crashlytics] C:\App\mighty_news\build\firebase_crashlytics\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_auth] C:\App\mighty_news\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19

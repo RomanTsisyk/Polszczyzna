@@ -1,6 +1,6 @@
 import 'package:nb_utils/nb_utils.dart';
 
-const mAppName = 'Mighty News';
+const mAppName = 'Polszczyzna';
 
 //region URLs & Keys
 /// Note: /wp-json/ is required after your domain. Ex if your domain is www.abc.com then ${mBaseUrl} will be  https://www.abc.com/wp-json/
@@ -23,9 +23,9 @@ var mTwitterApiSecretKey = '7viRNGALBsfS2pO8ZYAeUcyZT6aHB1gc680koJn8IWEdfwFG4A';
 var mTwitterApiAccessToken = '1347489470736519170-4gUb0e8NZak3GUGOsfLjEEtuimdFtZ';
 var mTwitterApiAccessTokenSecret = '63udaSTslbqpzn1dYqBOJ6wkD4t9wYY5M52of2VV1IHU4';
 
-const mAdMobAppId = 'ca-app-pub-1399327544318575~7586962359';
-const mAdMobBannerId = 'ca-app-pub-1399327544318575/7395390664';
-const mAdMobInterstitialId = 'ca-app-pub-1399327544318575/2840712768';
+const mAdMobAppId = 'ca-app-pub-6039811198656305~6641537885';
+const mAdMobBannerId = 'ca-app-pub-6039811198656305/6449966198';
+const mAdMobInterstitialId = 'ca-app-pub-6039811198656305/7296998607';
 //endregion
 
 //App store URL

@@ -151,16 +151,16 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          cachedImage(
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png',
-            fit: BoxFit.cover,
-          ).cornerRadiusWithClipRRect(defaultRadius).opacity(opacity: 0.7),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          // cachedImage(
+          //   'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Red_flag.svg/800px-Red_flag.svg.png',
+          //   fit: BoxFit.cover,
+          // ).cornerRadiusWithClipRRect(defaultRadius).opacity(opacity: 0.7),
+          // Column(
+          //   mainAxisSize: MainAxisSize.min,
+          //   children: [
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
 
                   Container(
@@ -172,16 +172,16 @@ class ReadAloudDialogState extends State<ReadAloudDialog> with TickerProviderSta
                       icon: AnimatedIcon(icon: AnimatedIcons.play_pause, progress: animationController, color: Colors.black),
                     ),
                   ),
-                  30.width,
                   Text('${ttsState == TtsState.playing ? 'Playing' : 'Stopped'}', style: boldTextStyle()),
-                  //8.width,
+                  64.width,
+                  Positioned(child: CloseButton(), top: 16, right: 16),
                 ],
               ),
-              30.height,
+              // 30.height,
             ],
-          ),
-          Positioned(child: CloseButton(), top: 16, right: 16),
-        ],
+          // ),
+          // Positioned(child: CloseButton(), top: 16, right: 16),
+        // ],
       ),
     );
   }

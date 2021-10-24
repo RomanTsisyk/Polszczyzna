@@ -105,6 +105,7 @@ class ProfileFragmentState extends State<ProfileFragment> {
                     // ),
                     // Divider(height: 20, color: appStore.isDarkMode ? Colors.transparent : Theme.of(context).dividerColor),
                     // 8.height,
+                    32.height,
                     titleWidget(appLocalization.translate('app_settings')),
                     LanguageSelectionWidget(),
                     SettingItemWidget(
@@ -124,23 +125,23 @@ class ProfileFragmentState extends State<ProfileFragment> {
                       },
                     ),
                     8.height,
-                    SettingItemWidget(
-                      leading: Icon(appStore.isNotificationOn ? Feather.bell : Feather.bell_off),
-                      title: '${appStore.isNotificationOn ? appLocalization.translate('disable') : appLocalization.translate('enable')} ${appLocalization.translate(
-                        'push_notification',
-                      )}',
-                      subTitle: appLocalization.translate('enable_push_notification'),
-                      trailing: CupertinoSwitch(
-                        activeColor: colorPrimary,
-                        value: appStore.isNotificationOn,
-                        onChanged: (v) {
-                          appStore.setNotification(v);
-                        },
-                      ).withHeight(10),
-                      onTap: () {
-                        appStore.setNotification(!getBoolAsync(IS_NOTIFICATION_ON, defaultValue: true));
-                      },
-                    ),
+                    // SettingItemWidget(
+                    //   leading: Icon(appStore.isNotificationOn ? Feather.bell : Feather.bell_off),
+                    //   title: '${appStore.isNotificationOn ? appLocalization.translate('disable') : appLocalization.translate('enable')} ${appLocalization.translate(
+                    //     'push_notification',
+                    //   )}',
+                    //   subTitle: appLocalization.translate('enable_push_notification'),
+                    //   trailing: CupertinoSwitch(
+                    //     activeColor: colorPrimary,
+                    //     value: appStore.isNotificationOn,
+                    //     onChanged: (v) {
+                    //       appStore.setNotification(v);
+                    //     },
+                    //   ).withHeight(10),
+                    //   onTap: () {
+                    //     appStore.setNotification(!getBoolAsync(IS_NOTIFICATION_ON, defaultValue: true));
+                    //   },
+                    // ),
                     SettingItemWidget(
                       leading: Icon(FontAwesome.font),
                       title: appLocalization.translate('article_font_size'),
@@ -166,32 +167,32 @@ class ProfileFragmentState extends State<ProfileFragment> {
                         //
                       },
                     ),
-                    SettingItemWidget(
-                      leading: Image.asset('assets/tts.png', width: 25, height: 25, color: appStore.isDarkMode ? Colors.white : Colors.black),
-                      title: appLocalization.translate('text_to_speech'),
-                      subTitle: appLocalization.translate('select_tts_language'),
-                      trailing: DropdownButton<Language>(
-                        items: ttsLanguage.map((e) {
-                          return DropdownMenuItem<Language>(
-                            child: Text('${e.name}', style: primaryTextStyle(size: 14), overflow: TextOverflow.ellipsis),
-                            value: e,
-                          );
-                        }).toList(),
-                        dropdownColor: appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
-                        value: ttsLang,
-                        underline: SizedBox(),
-                        onChanged: (Language l) async {
-                          appStore.setTTSLanguage(l.fullLanguageCode);
-
-                          ttsLang = l;
-
-                          setState(() {});
-                          toast('${l.name} ${appLocalization.translate('tts_language_confirm')}');
-                        },
-                      ),
-                      onTap: null,
-                    ),
-                    16.height,
+                    // SettingItemWidget(
+                    //   leading: Image.asset('assets/tts.png', width: 25, height: 25, color: appStore.isDarkMode ? Colors.white : Colors.black),
+                    //   title: appLocalization.translate('text_to_speech'),
+                    //   subTitle: appLocalization.translate('select_tts_language'),
+                    //   trailing: DropdownButton<Language>(
+                    //     items: ttsLanguage.map((e) {
+                    //       return DropdownMenuItem<Language>(
+                    //         child: Text('${e.name}', style: primaryTextStyle(size: 14), overflow: TextOverflow.ellipsis),
+                    //         value: e,
+                    //       );
+                    //     }).toList(),
+                    //     dropdownColor: appStore.isDarkMode ? scaffoldSecondaryDark : Colors.white,
+                    //     value: ttsLang,
+                    //     underline: SizedBox(),
+                    //     onChanged: (Language l) async {
+                    //       appStore.setTTSLanguage(l.fullLanguageCode);
+                    //
+                    //       ttsLang = l;
+                    //
+                    //       setState(() {});
+                    //       toast('${l.name} ${appLocalization.translate('tts_language_confirm')}');
+                    //     },
+                    //   ),
+                    //   onTap: null,
+                    // ),
+                    // 16.height,
                     titleWidget(appLocalization.translate('other')),
                     8.height,
                     SettingItemWidget(
@@ -214,21 +215,21 @@ class ProfileFragmentState extends State<ProfileFragment> {
                     //   },
                     // ),
                     // 8.height,
-                    SettingItemWidget(
-                      leading: Icon(Icons.check_circle_outline_outlined),
-                      title: appLocalization.translate('choose_detail_page_variant'),
-                      onTap: () {
-                        ChooseDetailPageVariantScreen().launch(context);
-                      },
-                    ),
-                    8.height,
-                    SettingItemWidget(
-                      leading: Icon(Icons.check_circle_outline_outlined),
-                      title: appLocalization.translate('choose_dashboard_page_variant'),
-                      onTap: () {
-                        ChooseDashboardPageVariant().launch(context);
-                      },
-                    ),
+                    // SettingItemWidget(
+                    //   leading: Icon(Icons.check_circle_outline_outlined),
+                    //   title: appLocalization.translate('choose_detail_page_variant'),
+                    //   onTap: () {
+                    //     ChooseDetailPageVariantScreen().launch(context);
+                    //   },
+                    // ),
+                    // 8.height,
+                    // SettingItemWidget(
+                    //   leading: Icon(Icons.check_circle_outline_outlined),
+                    //   title: appLocalization.translate('choose_dashboard_page_variant'),
+                    //   onTap: () {
+                    //     ChooseDashboardPageVariant().launch(context);
+                    //   },
+                    // ),
                     // 8.height,
                     // SettingItemWidget(
                     //   leading: Icon(FontAwesome.bookmark_o),
@@ -272,7 +273,7 @@ class ProfileFragmentState extends State<ProfileFragment> {
                       leading: Icon(Icons.assignment_outlined),
                       title: appLocalization.translate('term_condition'),
                       onTap: () {
-                        launchUrl(getStringAsync(TERMS_AND_CONDITION_PREF), forceWebView: true);
+                        launchUrl("https://romantsisyk.github.io/terms", forceWebView: true);
                       },
                     ),
                     8.height,
@@ -283,22 +284,22 @@ class ProfileFragmentState extends State<ProfileFragment> {
                         launchUrl(getStringAsync(PRIVACY_POLICY_PREF), forceWebView: true);
                       },
                     ),
-                    8.height,
-                    SettingItemWidget(
-                      leading: Icon(Icons.support_rounded),
-                      title: appLocalization.translate('help_Support'),
-                      onTap: () {
-                        launchUrl(supportURL, forceWebView: true);
-                      },
-                    ),
-                    8.height,
-                    SettingItemWidget(
-                      leading: Icon(Icons.info_outline),
-                      title: appLocalization.translate('about'),
-                      onTap: () {
-                        AboutAppScreen().launch(context);
-                      },
-                    ),
+                    // 8.height,
+                    // SettingItemWidget(
+                    //   leading: Icon(Icons.support_rounded),
+                    //   title: appLocalization.translate('help_Support'),
+                    //   onTap: () {
+                    //     launchUrl(supportURL, forceWebView: true);
+                    //   },
+                    // ),
+                    // 8.height,
+                    // SettingItemWidget(
+                    //   leading: Icon(Icons.info_outline),
+                    //   title: appLocalization.translate('about'),
+                    //   onTap: () {
+                    //     AboutAppScreen().launch(context);
+                    //   },
+                    // ),
                     8.height,
                     SettingItemWidget(
                       leading: Icon(Icons.exit_to_app_rounded),

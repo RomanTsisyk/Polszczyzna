@@ -221,9 +221,6 @@ int layout notification_template_part_chronometer 0x7f080007
 int layout notification_template_part_time 0x7f080008
 int layout toast_custom 0x7f080009
 int mipmap ic_launcher 0x7f090000
-int mipmap ic_launcher_foreground 0x7f090001
-int mipmap ic_launcher_round 0x7f090002
-int mipmap launch_image 0x7f090003
 int string com_crashlytics_android_build_id 0x7f0a0000
 int string common_google_play_services_enable_button 0x7f0a0001
 int string common_google_play_services_enable_text 0x7f0a0002

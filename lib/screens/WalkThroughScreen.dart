@@ -28,28 +28,28 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
   }
 
   init() async {
-    setStatusBarColor(Colors.white);
+    setStatusBarColor(colorPrimary);
     list.add(
       WalkThroughModel(
-        image: 'assets/walk_1.png',
-        title: 'Subscribe for updates',
-        subTitle: 'Mighty News offers an awesome category filter option which will let you access what you are interested in straight away!',
+        image: 'assets/history.png',
+        title: 'Rózne kategorię',
+        subTitle: 'Możesz wybrać kategorię, którą chcesz poznać najbardziej',
         color: colorPrimary,
       ),
     );
     list.add(
       WalkThroughModel(
-        image: 'assets/walk_3.png',
-        title: 'Choose your category',
-        subTitle: 'Mighty News is a complete set of incredible, easily importable UI and get regular updates by subscribing to it!',
+        image: 'assets/creative.png',
+        title: 'Dostempna forma',
+        subTitle: 'Znajdziesz tutaj pełne informacje w krótkiej formie o historii i kulturze Polski.',
         color: Color(0xFF6BD19B),
       ),
     );
     list.add(
       WalkThroughModel(
-        image: 'assets/walk_2.png',
-        title: 'Daily Notifications',
-        subTitle: 'Notify your users with the latest news with a daily push notification feature. They are highly interactive and useful.',
+        image: 'assets/text-to-speech.png',
+        title: 'Możemy dla Ciebie czytać na głos',
+        subTitle: 'Możesz kliknąć przycisk dźwięku, a aplikacja przeczyta cały artykuł. Możesz usłyszeć propozycję.',
         color: Color(0xFFA79BFC),
       ),
     );
@@ -101,43 +101,55 @@ class WalkThroughScreenState extends State<WalkThroughScreen> {
             onPageChanged: (i) {
               currentPage = i;
               setState(() {});
+
+              if (currentPage == 0) {
+                setStatusBarColor(colorPrimary);
+              } else if (currentPage == 1) {
+                setStatusBarColor(Color(0xFF6BD19B), statusBarIconBrightness: Brightness.light);
+              } else if (currentPage == 2) {
+                setStatusBarColor(Color(0xFFA79BFC), statusBarIconBrightness: Brightness.light);
+              }
             },
           ),
           Positioned(
             bottom: 30,
             right: 0,
             left: 0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
               children: [
-                Container(
-                  child: Text('skip'),
-                  decoration: boxDecorationRoundedWithShadow(30),
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                ).onTap(() async {
-                  await setValue(IS_FIRST_TIME, false);
-
-                  DashboardScreen().launch(context, isNewTask: true);
-                }),
                 DotIndicator(
                   pageController: pageController,
                   pages: list,
                 ),
-                Container(
-                  child: Text(currentPage != 2 ? 'next' : 'finish'),
-                  decoration: boxDecorationRoundedWithShadow(30),
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
-                ).onTap(() async {
-                  if (currentPage == 2) {
-                    await setValue(IS_FIRST_TIME, false);
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Text('skip'),
+                      decoration: boxDecorationRoundedWithShadow(30),
+                      padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                    ).onTap(() async {
+                      await setValue(IS_FIRST_TIME, false);
 
-                    DashboardScreen().launch(context, isNewTask: true);
-                  } else {
-                    pageController.animateToPage(currentPage + 1, duration: Duration(milliseconds: 300), curve: Curves.linear);
-                  }
-                }),
+                      DashboardScreen().launch(context, isNewTask: true);
+                    }),
+                    Container(
+                      child: Text(currentPage != 2 ? 'next' : 'finish'),
+                      decoration: boxDecorationRoundedWithShadow(30),
+                      padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                    ).onTap(() async {
+                      if (currentPage == 2) {
+                        await setValue(IS_FIRST_TIME, false);
+
+                        DashboardScreen().launch(context, isNewTask: true);
+                      } else {
+                        pageController.animateToPage(currentPage + 1, duration: Duration(milliseconds: 300), curve: Curves.linear);
+                      }
+                    }),
+                  ],
+                ).paddingOnly(left: 16, right: 16),
               ],
-            ).paddingOnly(left: 16, right: 16),
+            ),
           ),
         ],
       ),

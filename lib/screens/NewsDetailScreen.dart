@@ -207,7 +207,7 @@ class NewsDetailScreenState extends State<NewsDetailScreen> {
                   // ),
                   IconButton(
                     icon: Icon(
-                      Icons.play_circle_outline,
+                      Icons.record_voice_over,
                       color: (getIntAsync(DETAIL_PAGE_VARIANT, defaultValue: 1) == 1 && getIntAsync(DASHBOARD_PAGE_VARIANT, defaultValue: 1) == 1) || appStore.isDarkMode ? Colors.white : Colors.black,
                     ),
                     onPressed: () async {

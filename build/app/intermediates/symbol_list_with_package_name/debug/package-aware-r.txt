@@ -1,4 +1,4 @@
-com.mighty.news_test
+polszczyzna.tsisyk.app
 attr adSize
 attr adSizes
 attr adUnitId
@@ -222,9 +222,6 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout toast_custom
 mipmap ic_launcher
-mipmap ic_launcher_foreground
-mipmap ic_launcher_round
-mipmap launch_image
 string com_crashlytics_android_build_id
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text

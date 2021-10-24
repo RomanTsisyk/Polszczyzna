@@ -1,4 +1,4 @@
 io/flutter/plugins/GeneratedPluginRegistrant.java
  io.flutter.plugins.GeneratedPluginRegistrant
-com/mighty/news/BuildConfig.java
- com.mighty.news.BuildConfig
+polszczyzna/tsisyk/app/BuildConfig.java
+ polszczyzna.tsisyk.app.BuildConfig

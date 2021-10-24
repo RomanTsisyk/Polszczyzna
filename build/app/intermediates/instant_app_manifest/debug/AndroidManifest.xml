@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mighty.news_test"
+    package="polszczyzna.tsisyk.app"
     android:targetSandboxVersion="2"
     android:versionCode="29"
-    android:versionName="1.6.2" >
+    android:versionName="0.0.1" >
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="30" />
-    <!--
-         Flutter needs it to communicate with the running application
-         to allow setting breakpoints, to provide hot reload, etc.
-    -->
+        android:targetSdkVersion="31" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -53,10 +50,10 @@
         android:debuggable="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Mighty News"
+        android:label="Polszczyzna"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.mighty.news.MainActivity"
+            android:name="polszczyzna.tsisyk.app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
@@ -87,7 +84,7 @@
             android:value="2" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1399327544318575~7586962359" />
+            android:value="ca-app-pub-6039811198656305~6641537885" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
@@ -127,7 +124,7 @@
 
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-            android:authorities="com.mighty.news_test.flutter.image_provider"
+            android:authorities="polszczyzna.tsisyk.app.flutter.image_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -146,7 +143,7 @@
 
         <provider
             android:name="io.flutter.plugins.share.ShareFileProvider"
-            android:authorities="com.mighty.news_test.flutter.share_provider"
+            android:authorities="polszczyzna.tsisyk.app.flutter.share_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -212,7 +209,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.mighty.news_test.firebaseinitprovider"
+            android:authorities="polszczyzna.tsisyk.app.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -254,7 +251,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="com.mighty.news_test.mobileadsinitprovider"
+            android:authorities="polszczyzna.tsisyk.app.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -274,7 +271,7 @@
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="com.mighty.news_test.workmanager-init"
+            android:authorities="polszczyzna.tsisyk.app.workmanager-init"
             android:directBootAware="false"
             android:exported="false"
             android:multiprocess="true" />

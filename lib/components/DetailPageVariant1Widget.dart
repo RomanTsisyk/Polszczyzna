@@ -54,26 +54,26 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(FontAwesome.commenting_o, size: 16, color: textSecondaryColor),
-                      8.width,
-                      CommentTextWidget(text: widget.newsData.no_of_comments_text.validate(value: '0')),
-                    ],
-                  ).paddingOnly(left: 16, right: 8, top: 8, bottom: 8).onTap(() async {
-                    await CommentListScreen(widget.newsData.iD).launch(context);
-
-                    setDynamicStatusBarColorDetail(milliseconds: 400);
-                  }),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(FontAwesome.eye, size: 16, color: textSecondaryColor),
-                      8.width,
-                      Text(widget.postView.validate().toString(), style: secondaryTextStyle()),
-                    ],
-                  ).paddingOnly(left: 16, right: 16, top: 8, bottom: 8),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.min,
+                  //   children: [
+                  //     Icon(FontAwesome.commenting_o, size: 16, color: textSecondaryColor),
+                  //     8.width,
+                  //     CommentTextWidget(text: widget.newsData.no_of_comments_text.validate(value: '0')),
+                  //   ],
+                  // ).paddingOnly(left: 16, right: 8, top: 8, bottom: 8).onTap(() async {
+                  //   await CommentListScreen(widget.newsData.iD).launch(context);
+                  //
+                  //   setDynamicStatusBarColorDetail(milliseconds: 400);
+                  // }),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.min,
+                  //   children: [
+                  //     Icon(FontAwesome.eye, size: 16, color: textSecondaryColor),
+                  //     8.width,
+                  //     Text(widget.postView.validate().toString(), style: secondaryTextStyle()),
+                  //   ],
+                  // ).paddingOnly(left: 16, right: 16, top: 8, bottom: 8),
                 ],
               ),
               cachedImage(
@@ -86,14 +86,14 @@ class _DetailPageVariant1WidgetState extends State<DetailPageVariant1Widget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextIcon(
-                    text: '${widget.newsData.post_author_name.validate()}',
-                    textStyle: secondaryTextStyle(),
-                    prefix: Icon(Icons.person_outline_rounded),
-                  ).expand(),
+                  // TextIcon(
+                  //   text: '${widget.newsData.post_author_name.validate()}',
+                  //   textStyle: secondaryTextStyle(),
+                  //   prefix: Icon(Icons.person_outline_rounded),
+                  // ).expand(),
                   Row(
                     children: [
-                      Icon(Icons.access_time_rounded, color: textSecondaryColorGlobal, size: 16),
+                      Icon(Icons.record_voice_over, color: textSecondaryColorGlobal, size: 16),
                       4.width,
                       Text(widget.newsData.human_time_diff.validate(), style: secondaryTextStyle()),
                       4.width,
